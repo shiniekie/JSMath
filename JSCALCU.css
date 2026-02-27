@@ -3,18 +3,50 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Card auto-fits content */
 .auto-card {
-    width: auto;
-    display: inline-block;
+    max-width: 750px;
+    width: 100%;
 }
 
+/* Main horizontal layout */
+.calculator-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Text field size */
+.small-input {
+    width: 160px;
+}
+
+/* Operator dropdown */
+.operator-select {
+    width: 80px;
+}
+
+/* Result styling */
 .result-text {
     font-weight: bold;
     font-size: 18px;
     color: #333;
 }
-.auto-card {
-    max-width: 600px;
-    width: 100%;
+
+/* First number section layout */
+.first-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🔹 Solve button styling */
+.first-section button {
+    width: 80px;              /* Half of 160px input */
+    background-color: #f8f9fa; /* Off-white */
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.first-section button:hover {
+    background-color: #9e9d9d;
 }

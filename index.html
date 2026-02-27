@@ -16,50 +16,47 @@
 <div class="container d-flex justify-content-center mt-5">
     <div class="card p-4 shadow-sm auto-card">
 
-        <h4 class="mb-3">Math in JavaScript</h4>
+        <h4 class="mb-4">Math in JavaScript</h4>
 
-        <!-- INLINE INPUT ROW -->
-        <div class="d-flex gap-3 align-items-end flex-wrap">
+        <!-- Main Row -->
+        <div class="calculator-row">
 
-            <!-- First Number -->
-            <div>
+            <!-- First Number Section -->
+            <div class="first-section">
                 <label class="form-label">First Number:</label>
-                <input type="number" id="firstNumber" class="form-control">
+                <input type="number" id="firstNumber" class="form-control small-input">
+
+                <!-- Solve Button BELOW First Number -->
+                <button class="btn btn-primary mt-3" onclick="calculate()">Solve</button>
             </div>
 
             <!-- Operator -->
-            <div>
+            <div class="operator-section">
                 <label class="form-label">Operator</label>
-                <select id="operator" class="form-select">
+                <select id="operator" class="form-select operator-select">
                     <option value="+">+</option>
                     <option value="-">-</option>
-                    <option value="/">/</option>
                     <option value="*">*</option>
+                    <option value="/">/</option>
                 </select>
             </div>
 
             <!-- Second Number -->
             <div>
                 <label class="form-label">Second Number:</label>
-                <input type="number" id="secondNumber" class="form-control">
+                <input type="number" id="secondNumber" class="form-control small-input">
             </div>
 
         </div>
 
-        <!-- Solve Button -->
-        <div class="mt-4">
-            <button class="btn btn-primary" onclick="calculate()">Solve</button>
-        </div>
-
         <!-- Result -->
-        <div class="mt-3">
+        <div class="mt-4">
             <h5 id="result" class="result-text"></h5>
         </div>
 
     </div>
 </div>
 
-<!-- JavaScript -->
 <script>
 function calculate() {
     let first = document.getElementById("firstNumber").value;
@@ -88,11 +85,7 @@ function calculate() {
             result = first * second;
             break;
         case "/":
-            if (second === 0) {
-                result = "Cannot divide by zero";
-            } else {
-                result = first / second;
-            }
+            result = second === 0 ? "Cannot divide by zero" : first / second;
             break;
         default:
             result = "Invalid operator";
