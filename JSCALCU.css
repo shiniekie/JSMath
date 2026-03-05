@@ -8,22 +8,20 @@ body {
     width: 100%;
 }
 
-/* Main horizontal layout */
-.calculator-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    flex-wrap: wrap;
+/* Inputs and operator take full width of their column */
+input.form-control, select.form-select {
+    width: 100%;
 }
 
-/* Text field size */
-.small-input {
-    width: 160px;
+/* Solve button styling */
+button.btn-primary {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ccc;
 }
 
-/* Operator dropdown */
-.operator-select {
-    width: 80px;
+button.btn-primary:hover {
+    background-color: #9e9d9d;
 }
 
 /* Result styling */
@@ -31,22 +29,4 @@ body {
     font-weight: bold;
     font-size: 18px;
     color: #333;
-}
-
-/* First number section layout */
-.first-section {
-    display: flex;
-    flex-direction: column;
-}
-
-/* 🔹 Solve button styling */
-.first-section button {
-    width: 80px;              /* Half of 160px input */
-    background-color: #f8f9fa; /* Off-white */
-    color: #333;
-    border: 1px solid #ccc;
-}
-
-.first-section button:hover {
-    background-color: #9e9d9d;
 }

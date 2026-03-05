@@ -16,24 +16,24 @@
 <div class="container d-flex justify-content-center mt-5">
     <div class="card p-4 shadow-sm auto-card">
 
-        <h4 class="mb-4">Math in JavaScript</h4>
+        <h4 class="mb-4 text-center">Math in JavaScript</h4>
 
         <!-- Main Row -->
-        <div class="calculator-row">
+        <div class="row g-3 align-items-start">
 
-            <!-- First Number Section -->
-            <div class="first-section">
+            <!-- First Number -->
+            <div class="col-12 col-md-4 d-flex flex-column">
                 <label class="form-label">First Number:</label>
-                <input type="number" id="firstNumber" class="form-control small-input">
+                <input type="number" id="firstNumber" class="form-control mt-1">
 
-                <!-- Solve Button BELOW First Number -->
-                <button class="btn btn-primary mt-3" onclick="calculate()">Solve</button>
+                <!-- Solve Button for medium+ screens -->
+                <button class="btn btn-primary mt-3 w-50 d-none d-md-block" onclick="calculate()">Solve</button>
             </div>
 
             <!-- Operator -->
-            <div class="operator-section">
+            <div class="col-12 col-md-4 d-flex flex-column">
                 <label class="form-label">Operator</label>
-                <select id="operator" class="form-select operator-select">
+                <select id="operator" class="form-select mt-1">
                     <option value="+">+</option>
                     <option value="-">-</option>
                     <option value="*">*</option>
@@ -42,15 +42,20 @@
             </div>
 
             <!-- Second Number -->
-            <div>
+            <div class="col-12 col-md-4 d-flex flex-column">
                 <label class="form-label">Second Number:</label>
-                <input type="number" id="secondNumber" class="form-control small-input">
+                <input type="number" id="secondNumber" class="form-control mt-1">
             </div>
 
         </div>
 
+        <!-- Solve Button for small screens (bottom) -->
+        <div class="mt-4 text-center d-block d-md-none">
+            <button class="btn btn-primary w-50" onclick="calculate()">Solve</button>
+        </div>
+
         <!-- Result -->
-        <div class="mt-4">
+        <div class="mt-4 text-center">
             <h5 id="result" class="result-text"></h5>
         </div>
 
@@ -75,20 +80,11 @@ function calculate() {
     let result;
 
     switch(operator) {
-        case "+":
-            result = first + second;
-            break;
-        case "-":
-            result = first - second;
-            break;
-        case "*":
-            result = first * second;
-            break;
-        case "/":
-            result = second === 0 ? "Cannot divide by zero" : first / second;
-            break;
-        default:
-            result = "Invalid operator";
+        case "+": result = first + second; break;
+        case "-": result = first - second; break;
+        case "*": result = first * second; break;
+        case "/": result = second === 0 ? "Cannot divide by zero" : first / second; break;
+        default: result = "Invalid operator";
     }
 
     resultElement.innerHTML = "Result: " + result;
