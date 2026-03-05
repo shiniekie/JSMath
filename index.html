@@ -21,13 +21,16 @@
         <!-- Main Row -->
         <div class="row g-3 align-items-start">
 
-            <!-- First Number -->
+            <!-- First Number + Solve button for large screens -->
             <div class="col-12 col-md-4 d-flex flex-column">
                 <label class="form-label">First Number:</label>
                 <input type="number" id="firstNumber" class="form-control mt-1">
 
-                <!-- Solve Button for medium+ screens -->
-                <button class="btn btn-primary mt-3 w-50 d-none d-md-block" onclick="calculate()">Solve</button>
+                <!-- Solve button (large screens) -->
+                <div class="d-none d-md-block mt-3">
+                    <button class="btn btn-primary w-50" onclick="calculate()">Solve</button>
+                    <h5 id="resultLarge" class="result-text mt-2"></h5>
+                </div>
             </div>
 
             <!-- Operator -->
@@ -49,14 +52,10 @@
 
         </div>
 
-        <!-- Solve Button for small screens (bottom) -->
+        <!-- Solve button for small screens (bottom) -->
         <div class="mt-4 text-center d-block d-md-none">
             <button class="btn btn-primary w-50" onclick="calculate()">Solve</button>
-        </div>
-
-        <!-- Result -->
-        <div class="mt-4 text-center">
-            <h5 id="result" class="result-text"></h5>
+            <h5 id="resultSmall" class="result-text mt-2"></h5>
         </div>
 
     </div>
@@ -67,27 +66,27 @@ function calculate() {
     let first = document.getElementById("firstNumber").value;
     let second = document.getElementById("secondNumber").value;
     let operator = document.getElementById("operator").value;
-    let resultElement = document.getElementById("result");
-
-    if (first === "" || second === "") {
-        resultElement.innerHTML = "";
-        return;
-    }
-
-    first = parseFloat(first);
-    second = parseFloat(second);
 
     let result;
 
-    switch(operator) {
-        case "+": result = first + second; break;
-        case "-": result = first - second; break;
-        case "*": result = first * second; break;
-        case "/": result = second === 0 ? "Cannot divide by zero" : first / second; break;
-        default: result = "Invalid operator";
+    if (first === "" || second === "") {
+        result = "";
+    } else {
+        first = parseFloat(first);
+        second = parseFloat(second);
+
+        switch(operator) {
+            case "+": result = first + second; break;
+            case "-": result = first - second; break;
+            case "*": result = first * second; break;
+            case "/": result = second === 0 ? "Cannot divide by zero" : first / second; break;
+            default: result = "Invalid operator";
+        }
     }
 
-    resultElement.innerHTML = "Result: " + result;
+    // Display result in both places
+    document.getElementById("resultLarge").innerHTML = "Result: " + result;
+    document.getElementById("resultSmall").innerHTML = "Result: " + result;
 }
 </script>
 

@@ -8,7 +8,6 @@ body {
     width: 100%;
 }
 
-/* Inputs and operator take full width of their column */
 input.form-control, select.form-select {
     width: 100%;
 }
