@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Math in JavaScript</title>
-
-    <!-- Link to external CSS -->
     <link rel="stylesheet" href="JSCALCU.css">
 </head>
 <body>
 
 <h2>Math in JavaScript</h2>
 
-<div class="calculator">
+<div class="container">
 
     <div class="row">
-        <label for="num1">First Number:</label>
+        First Number:
         <input type="number" id="num1">
 
-        <!-- Operator dropdown without label -->
         <select id="operator">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -24,21 +22,18 @@
             <option value="/">/</option>
         </select>
 
-        <label for="num2">Second Number:</label>
+        Second Number:
         <input type="number" id="num2">
     </div>
 
     <div class="row">
-        <button id="solveBtn">Solve</button>
+        <button onclick="calculate()">Solve</button>
     </div>
 
-    <!-- Result initially empty -->
     <div id="result"></div>
 
 </div>
 
-<!-- Link to external JS -->
 <script src="JSCALCU.js"></script>
-
 </body>
 </html>

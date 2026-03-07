@@ -3,37 +3,30 @@ body {
     margin: 40px;
 }
 
-.calculator {
+.container {
+    padding-left: 0; /* Removed the left border space */
     margin-top: 20px;
-    padding-left: 20px; /* slight indentation */
 }
 
-/* row spacing */
 .row {
     margin-bottom: 10px;
 }
 
-/* Inputs */
 input {
     width: 150px;
     padding: 5px;
-    margin-right: 10px;
 }
 
-/* Operator dropdown small and fits function */
-select {
-    width: 50px;
+select#operator {
+    width: 50px; /* smaller width for operator dropdown */
     padding: 5px;
-    margin-right: 10px;
 }
 
-/* Solve button */
 button {
     padding: 5px 10px;
     margin-top: 5px;
 }
 
-/* Result */
 #result {
     margin-top: 10px;
     font-weight: bold;
