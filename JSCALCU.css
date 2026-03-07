@@ -1,31 +1,40 @@
 body {
-    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    margin: 40px;
 }
 
-.auto-card {
-    max-width: 750px;
-    width: 100%;
+.calculator {
+    margin-top: 20px;
+    padding-left: 20px; /* slight indentation */
 }
 
-input.form-control, select.form-select {
-    width: 100%;
+/* row spacing */
+.row {
+    margin-bottom: 10px;
 }
 
-/* Solve button styling */
-button.btn-primary {
-    background-color: #f8f9fa;
-    color: #333;
-    border: 1px solid #ccc;
+/* Inputs */
+input {
+    width: 150px;
+    padding: 5px;
+    margin-right: 10px;
 }
 
-button.btn-primary:hover {
-    background-color: #9e9d9d;
+/* Operator dropdown small and fits function */
+select {
+    width: 50px;
+    padding: 5px;
+    margin-right: 10px;
 }
 
-/* Result styling */
-.result-text {
+/* Solve button */
+button {
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+/* Result */
+#result {
+    margin-top: 10px;
     font-weight: bold;
-    font-size: 18px;
-    color: #333;
 }
